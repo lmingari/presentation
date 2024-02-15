@@ -12,6 +12,7 @@ institute:
     - \inst{3} Istituto Nazionale di Geofisica e Vulcanologia, Sezione di Bologna, Bologna, Italy
 aspectratio: 169
 date: February 13, 2024
+titlegraphic: logo/dtgeo.png
 fontsize: 9pt
 header-includes:
     - \usepackage{tikz}
@@ -20,10 +21,9 @@ header-includes:
 
 # Introduction and motivation
 
-- Customarily, operational forecast systems rely on volcanic ash transport and dispersal (VATD) models to produce deterministic forecasts
-- We can generate realistic representations of the spatio-temporal distribution of airborne volcanic species (i.e. ash and gases) and tephra deposits using a physics-based approach
-- In parallel, there has been a growing interest in ensemble approaches for modelling the atmospheric transport of volcanic aerosol and tephra in recent years
-- This study explores different challenges involving ensemble modelling and proposes some approaches for dealing with ensemble data 
+- Atmospheric dispersion models can provide realistic distributions of airborne volcanic ash and gases or tephra deposits
+- Traditionally, operational forecast systems rely on volcanic ash transport and dispersal (VATD) models to produce deterministic forecasts
+- Ensemble modelling poses new challenges: we explore approaches for dealing with large volumes of ensemble data, data interpretation and applications 
 
 __Why ensemble modelling?__
 
@@ -122,6 +122,32 @@ The gamma distribution provides a good approximation to the ensemble distributio
     yshift=22mm
     ] { $P_{ij} = P(d_i<d_{th},d_j<d_{th}) $ };
 
+\node<3> at (2,6)
+    [
+    draw,
+    red,
+    thick,
+    minimum height = 2.5cm,
+    minimum width = 2.5cm
+    ] { };
+
+\node<3> at (4.5,3.7)
+    [
+    draw,
+    red,
+    thick,
+    minimum height = 1.7cm,
+    minimum width = 1.8cm
+    ] { };
+
+\node<3> at (6.5,1.8)
+    [
+    draw,
+    red,
+    thick,
+    minimum height = 1.6cm,
+    minimum width = 1.8cm
+    ] { };
 
 \node<4> at (current page.west)
     [
@@ -141,7 +167,7 @@ The gamma distribution provides a good approximation to the ensemble distributio
     circle,
     scale=3,
     xshift=11.5mm,
-    yshift=4mm,
+    yshift=4.4mm,
     ] {};
 
 \node<5> at (current page.west)
@@ -162,7 +188,7 @@ The gamma distribution provides a good approximation to the ensemble distributio
     circle,
     scale=3,
     xshift=26.3mm,
-    yshift=-10mm,
+    yshift=-9.6mm,
     ] {};
 
 \end{tikzpicture}
@@ -191,19 +217,17 @@ __Complexity reduction__:
 - We need to measure the distance $d_{ij}$ between two model states $i$ and $j$
 - Ensemble members with similar distances are grouped
 
-
-
-    \begin{block}{Reduced ensemble}
-        \begin{center}
-        Ensemble size reduction:\\
-        $120 \rightarrow 14$
-        \end{center}
-    \end{block}
+\begin{block}{Reduced ensemble}
+    \begin{center}
+    Ensemble size reduction:\\
+    $120 \rightarrow 14$
+    \end{center}
+\end{block}
 
 :::
 ::::::::::::::
 
-# Comparison of products
+# Comparison of model products
 
 :::::::::::::: {.columns}
 ::: {.column width="32%"}
@@ -231,6 +255,7 @@ Probability of exceedance $\rightarrow$
 \begin{center}
 \underline{Reduced ensemble} \\[1em]
 $\leftarrow$ High probability state ($41\%$) \\[1em]
+
 Low probability state ($6\%$) $\rightarrow$
 \end{center}
 :::
@@ -318,10 +343,18 @@ Time evolution of emission rate profiles for the 2015 Calbuco eruption according
 
 # Conclusions
 
-* When ensemble simulations should be performed instead of the deterministic simulations?
-* How the ensemble should be constructed?
-* Which variables should be perturbed?
-* What's the minimum ensemble size required to properly represent the system state?
-* How interpretate and deal with large volumes of ensemble data?
-* Which probabilistic output products are relevant?
+* When ensemble simulations are useful?
+  - Whenever the ESP or meteorological conditions have large uncertainties
+  - If forecast errors must be quantified
+  - If observations are available to be assimilated
+  - When the emission source needs to be characterised
+* How should the ensemble be constructed? Which variables should be perturbed? What's the minimum ensemble size required?
+  - We gave a preliminary insight into which parameters are the most sensitive
+  - What is the minimum ensemble size corresponding to each case
+* How interpret and deal with large volumes of ensemble data? Which probabilistic output products are relevant?
+  - We proposed a complexity reduction technique in order to identify qualitatively different states in the ensemble
+  - We obtained approximate solutions of the physical model, including the state that is most likely to be sampled, and assigned a probability
+  - These physically consistent states can be compared directly with satellite images
 * Are the traditional assimilation methods suitable for the atmospheric dispersion of volcanic species?
+  - Traditional data assimilation methods lead to suboptimal performance in the case of VATD model
+  - We propose a new ensemble-based data assimilation method which outperforms the classical EnKF method when is applied to VATD models

@@ -43,6 +43,7 @@ $endif$
 \setbeamercolor{caption name}{fg=normal text.fg}
 \setbeamercolor{block title}{bg=green!10, fg=red}
 \setbeamercolor{block body}{bg=green!30}
+\setbeamertemplate{itemize subitem}[square]
 \beamertemplatenavigationsymbols$if(navigation)$$navigation$$else$empty$endif$
 $for(beameroption)$
 \setbeameroption{$beameroption$}
@@ -472,7 +473,7 @@ $if(institute)$
 \institute{$for(institute)$$institute$$sep$ \and $endfor$}
 $endif$
 $if(titlegraphic)$
-\titlegraphic{\includegraphics{$titlegraphic$}}
+\titlegraphic{\includegraphics[width=3cm]{$titlegraphic$}}
 $endif$
 $if(logo)$
 \logo{\includegraphics{$logo$}}
