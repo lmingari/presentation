@@ -1,5 +1,6 @@
 ---
 title: "Ensemble atmospheric dispersion modelling of volcanic species: interpreting ensemble data and applications"
+subtitle: "Cities on Volcanoes 12, Antigua Guatemala"
 author:
     - L. Mingari \inst{1}
     - A. Folch \inst{1}
@@ -328,10 +329,12 @@ __GNC method__:
 - Valid for problem with weak non-linearity effects
 
 :::::::::::::: {.columns}
-::: {.column width="80%"}
+::: {.column width="67%"}
 ![](calbuco2015/inversion.png)
 :::
-::: {.column width="20%"}
+::: {.column width="33%"}
+
+![](calbuco2015/Calbuco.png)
 
 \begin{footnotesize}
 \underline{Calbuco eruption} \\[1em]
@@ -353,8 +356,8 @@ Time evolution of emission rate profiles for the 2015 Calbuco eruption according
   - What is the minimum ensemble size corresponding to each case
 * How interpret and deal with large volumes of ensemble data? Which probabilistic output products are relevant?
   - We proposed a complexity reduction technique in order to identify qualitatively different states in the ensemble
-  - We obtained approximate solutions of the physical model, including the state that is most likely to be sampled, and assigned a probability
+  - We obtained approximate solutions of the physical model, including the state that is most likely to be sampled, and assigned a probability to each state
   - These physically consistent states can be compared directly with satellite images
 * Are the traditional assimilation methods suitable for the atmospheric dispersion of volcanic species?
-  - Traditional data assimilation methods lead to suboptimal performance in the case of VATD model
+  - Traditional data assimilation methods lead to suboptimal performance in the case VATD models
   - We propose a new ensemble-based data assimilation method which outperforms the classical EnKF method when is applied to VATD models
