@@ -50,7 +50,7 @@ __Ensemble construction__:
 - Grain size distribution
 - Aggregation parameters
 - Meteorological fields
-- Diffusivity coefficients
+- Diffusion coefficients
 
 \vspace{1em}
 
@@ -214,9 +214,9 @@ __Traditional products__:
 
 __Complexity reduction__:
 
-- Remove redundancy in the ensemble data
+- Removes redundancy in the ensemble data
 - We need to measure the distance $d_{ij}$ between two model states $i$ and $j$
-- Ensemble members with similar distances are grouped
+- Ensemble members with low distances are grouped
 
 \begin{block}{Reduced ensemble}
     \begin{center}
@@ -228,7 +228,7 @@ __Complexity reduction__:
 :::
 ::::::::::::::
 
-# Comparison of model products
+# Comparison of output products
 
 :::::::::::::: {.columns}
 ::: {.column width="32%"}
